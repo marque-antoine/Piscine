@@ -1,0 +1,111 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Edite</title>
+
+	<link rel="stylesheet" href="style-acceuil.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<meta charset="utf-8">
+	<style>
+		body  {
+		    background-image: url("im1.jpg");
+		    background-color: #cccccc;
+		}
+
+
+		input[type=text], select {
+		    width: 100%;
+		    padding: 12px 20px;
+		    margin: 8px 0;
+		    display: inline-block;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    box-sizing: border-box;
+		}
+
+		input[type=password], select {
+		    width: 100%;
+		    padding: 12px 20px;
+		    margin: 8px 0;
+		    display: inline-block;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    box-sizing: border-box;
+		}
+
+		input[type=submit] {
+		    width: 100%;
+		    background-color: #4CAF50;
+		    color: white;
+		    padding: 14px 20px;
+		    margin: 8px 0;
+		    border: none;
+		    border-radius: 4px;
+		    cursor: pointer;
+		}
+
+		input[type=submit]:hover {
+		    background-color: #45a049;
+		}
+
+		div {
+		    border-radius: 5px;
+		    background-color: #f2f2f2;
+		}
+		{
+			padding: 100px;
+		}
+	</style>
+</head>
+<header>
+	<div class="top"> 
+		<div class="container">
+			<div class="content">
+				
+			</div>
+		</div>
+	</div>
+</header>
+<body>
+  
+	<section>
+		<div class="middle" >
+			<div class="containner">
+
+				<div class="content">
+					<div class="col-md-4">
+					</div>
+					
+					<div class="col-md-4">
+						<h1>Se connecter</h1>
+						<p>
+							<form action= "/action_page.php" method="post">
+								<label for="name" ></label>
+								<input type="text" placeholder="Nom d'utilisateur" id="Nom D'utilisateur" required/>
+							</form>
+						</p>
+						<p>
+							<form action= "/action_page.php" method="post">
+								<label for="password"></label>
+								<input type="password" placeholder="Mot de passe" id="Mot de passe" required/>
+							</form>
+						</p>
+						<p>
+							<input type="submit" value="Se connecter" />	
+						</p>
+				
+						<form>
+			    			<input type="radio" name="souvenir" value="se souvenir" checked> Se souvenir de moi<br>
+						</form>
+					</div>
+					
+					<div class="col-md-4">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+</body>
+	
+</html>

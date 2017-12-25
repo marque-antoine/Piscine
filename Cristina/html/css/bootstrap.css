@@ -172,6 +172,7 @@ fieldset {
 legend {
   padding: 0;
   border: 0;
+    display: flex; 
 }
 textarea {
   overflow: auto;
@@ -197,6 +198,7 @@ th {
     background: transparent !important;
     -webkit-box-shadow: none !important;
             box-shadow: none !important;
+      
   }
   a,
   a:visited {

@@ -1,5 +1,5 @@
 CREATE TABLE contact(
-	NumContact int NOT NULL UNIQUE, 
+	NumContact int NOT NULL UNIQUE AUTO_INCREMENT, 
 	NomContact varchar(255),
 	PrenomContact varchar(255),
 	NumTelContact varchar(255),
@@ -9,7 +9,7 @@ CREATE TABLE contact(
 	
 );
 CREATE TABLE editeur(
-	NumEditeur int NOT NULL UNIQUE,
+	NumEditeur int NOT NULL UNIQUE AUTO_INCREMENT,
 	NomEditeur varchar(255),
 	VilleEditeur varchar(255),
 	RueEditeur varchar(255),
@@ -18,7 +18,7 @@ CREATE TABLE editeur(
 	
 );
 CREATE TABLE loger(
-	IdLoger int NOT NULL UNIQUE,
+	IdLoger int NOT NULL UNIQUE AUTO_INCREMENT,
 	NumLogement int NOT NULL,
 	NumReservation int NOT NULL,
 	PlacesFrais int,
@@ -26,7 +26,7 @@ CREATE TABLE loger(
 
 );
 CREATE TABLE suivi(
-	RefSuivi int NOT NULL UNIQUE,
+	RefSuivi int NOT NULL UNIQUE AUTO_INCREMENT,
 	nustiu int,
 	Relance bit,
 	Reponse bit,
@@ -35,7 +35,7 @@ CREATE TABLE suivi(
 
 );
 CREATE TABLE logement(
-	NumLogement int NOT NULL UNIQUE,
+	NumLogement int NOT NULL UNIQUE AUTO_INCREMENT,
 	VilleLogement varchar(255),
 	RueLogement varchar(255),
 	CodePostaleLogement varchar(255),
@@ -44,7 +44,7 @@ CREATE TABLE logement(
 	PRIMARY KEY (NumLogement)
 );
 CREATE TABLE reservation(
-	NumReservation int NOT NULL UNIQUE,
+	NumReservation int NOT NULL UNIQUE AUTO_INCREMENT,
 	DateReservation date,
 	Commenaire char(255),
 	PrixEspace double,
@@ -54,7 +54,7 @@ CREATE TABLE reservation(
 
 );
 CREATE TABLE jeux(
-	NumJeux int NOT NULL UNIQUE,
+	NumJeux int NOT NULL UNIQUE AUTO_INCREMENT,
 	NomJeux varchar(255),
 	NombreJoueur int,
 	DateSortie date,
@@ -64,25 +64,25 @@ CREATE TABLE jeux(
 	PRIMARY KEY (NumJeux)
 );
 CREATE TABLE categorie(
-	CodeCategorie int NOT NULL UNIQUE,
+	CodeCategorie int NOT NULL UNIQUE AUTO_INCREMENT,
 	NomCategorie varchar(255),
 	PRIMARY KEY (CodeCategorie)
 );
 CREATE TABLE festival(
-	AnneFestival int NOT NULL UNIQUE,
+	AnneFestival int NOT NULL UNIQUE AUTO_INCREMENT,
 	DateFestival date, 
 	NombreTables int,
 	PrixPlaceStandard double,
 	PRIMARY KEY (AnneFestival)
 );
-CREATE TABLE zones(
-	NumZones int NOT NULL UNIQUE,
-	NomZones varchar(255),
+CREATE TABLE zone(
+	NumZone int NOT NULL UNIQUE AUTO_INCREMENT,
+	NomZone varchar(255),
 	AnneFestival int,
-	PRIMARY KEY (NumZones)
+	PRIMARY KEY (NumZone)
 );
 CREATE TABLE concerner(
-	IdConcerner int NOT NULL UNIQUE,
+	IdConcerner int NOT NULL UNIQUE AUTO_INCREMENT,
 	NumReservation int NOT NULL UNIQUE,
 	NumJeux int NOT NULL UNIQUE,
 	Nombre int, 
@@ -93,17 +93,22 @@ CREATE TABLE concerner(
 	
 );
 CREATE TABLE localiser(
-	IdLocaliser int NOT NULL UNIQUE,
+	IdLocaliser int NOT NULL UNIQUE AUTO_INCREMENT,
 	NumReservation int NOT NULL UNIQUE,
-	NumZones int NOT NULL UNIQUE,
+	NumZone int NOT NULL UNIQUE,
 	PRIMARY KEY (IdLocaliser)
 	
 );
 CREATE TABLE regrouper (
-	IdRegrouper int NOT NULL UNIQUE,
+	IdRegrouper int NOT NULL UNIQUE AUTO_INCREMENT,
 	NumEditeur int NOT NULL,
-	NumZones int NOT NULL,
+	NumZone int NOT NULL,
 	PRIMARY KEY (IdRegrouper)
 	
 );
-
+CREATE TABLE organiser (
+	IdOrganiser int NOT NULL UNIQUE AUTO_INCREMENT,
+	NumZone int NOT NULL UNIQUE,
+	CodeCategorie int NOT NULL UNIQUE,
+	PRIMARY KEY (IdOrganiser)
+);

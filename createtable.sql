@@ -27,7 +27,7 @@ CREATE TABLE loger(
 );
 CREATE TABLE suivi(
 	RefSuivi int NOT NULL UNIQUE AUTO_INCREMENT,
-	nustiu int,
+	PremierContact int,
 	Relance bit,
 	Reponse bit,
 	NumEditeur int NOT NULL,

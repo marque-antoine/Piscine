@@ -2,11 +2,28 @@
 	include'inc/header.php';
 	//include'conexion2.php';
 
-	function myFunction() {
-	$nom = $_POST['nom'];
-	$pass = $_POST['pass'];
-	
-}
+    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', '');
+
+    //Editeurs
+    $sql = "SELECT NumEditeur, NomEditeur
+            FROM `editeur`";
+    $q = $myPDO->query($sql);
+    $editeurs = [];
+    foreach($q as $ed){
+        $editeurs[$ed['NomEditeur']] = $ed['NumEditeur'];
+    }
+    
+    //Categories 
+    $sql = "SELECT CodeCategorie, NomCategorie
+            FROM `categorie`";
+    $q = $myPDO->query($sql);
+    $categories = [];
+    foreach($q as $cat){
+        $categories[$cat['NomCategorie']] = $cat['CodeCategorie'];
+    }
+    // var_dump($editeurs);
+    // die();
+
 ?>
 <middle>
 <form action= "ajoutJeuxfunc.php" method="POST" >
@@ -29,13 +46,25 @@
 
     </p>
      <p>
-        <label for="numEditeur">ID editeur</label> : <input type="int" name="numEditeur" id="numEditeur" required/>
+        <label for="numEditeur">ID editeur</label> : <select name="numEditeur" id="numEditeur" required>
+                <?php
+                foreach($editeurs as $key => $value):
+                echo '<option value="'.$value.'">'.$key.'</option>'; 
+                endforeach;
+                ?>
+            </select>
         <!--<label for="Num">NUM </label><input type="number" name="numEditeur" id="numEditeur" required/>-->
 
     </p>
 
      <p>
-        <label for="codeCategorie">Code categorie</label> : <input type="int" name="codeCategorie" id="codeCategorie" required/>
+        <label for="codeCategorie">Code categorie</label> : <select name="codeCategorie" id="codeCategorie" required>
+                <?php
+                foreach($categories as $key => $value):
+                echo '<option value="'.$value.'">'.$key.'</option>'; 
+                endforeach;
+                ?>
+            </select>
         <!--<label for="Num">NUM </label><input type="number" name="numEditeur" id="numEditeur" required/>-->
 
     </p>

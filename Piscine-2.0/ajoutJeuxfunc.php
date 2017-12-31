@@ -15,6 +15,8 @@ $DureePartie = $_POST['DureePartie'];
 $editeur = $_POST['numEditeur'];
 $categ = $_POST['codeCategorie'];
 
+
+
 echo $nomJeux;
 echo $nombre;
 echo $DateSortie;

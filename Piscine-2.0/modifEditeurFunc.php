@@ -28,7 +28,7 @@ $code = $_POST['code'];
 //$sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
 //$sql = "INSERT INTO `editeur` SET VALUES (NULL, '$nom', '$ville', '$rue', '$code')";
 // $sql = "SELECT * FROM `editeur`";
-$sql = "UPDATE `editeur` SET nomEditeur='".$nom."' WHERE numEditeur='".$num."'";
+$sql = "UPDATE `editeur` SET nomEditeur='".$nom."', villeEditeur='".$ville."', rueEditeur='".$rue."', codePostaleEditeur='".$code."' WHERE numEditeur='".$num."'";
 
 //$array=[];
 //$stmt = $myPDO->prepare($sql);
@@ -44,3 +44,6 @@ if ($myPDO->query($sql) == TRUE) {
 // $conn->close();
 ?>
 
+<html>
+	<script type="text/javascript">location.href = 'editeur.php';</script>
+</html>

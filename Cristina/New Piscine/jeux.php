@@ -5,7 +5,7 @@
     //$password = "";
     //$dbname = "piscine";
     //$editeur= "editeur";
-    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', '');
+    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', 'root');
 
     $sql = "SELECT NumJeux, NomJeux, NombreJoueur,  DateSortie, DureePartie, NumEditeur, CodeCategorie 
             FROM `jeux`";

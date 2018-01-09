@@ -6,7 +6,7 @@
     //$password = "";
     //$dbname = "piscine";
     //$editeur= "editeur";
-    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', '');
+    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', 'root');
 
     $sql1 = "SELECT NumEditeur, NomEditeur, VilleEditeur, RueEditeur, CodePostaleEditeur 
             FROM `editeur`";

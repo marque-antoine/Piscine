@@ -9,7 +9,7 @@
     //$dbname = "piscine";
     //$editeur= "editeur";
 
-    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root');
+    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', 'root');
 
 
     $sql1 = "SELECT NumReservation, DateReservation, Commenaire, PrixEspace, Statut, EtatFacture

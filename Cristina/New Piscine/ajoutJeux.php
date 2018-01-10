@@ -2,7 +2,7 @@
 	include'inc/header.php';
 	//include'conexion2.php';
 
-    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', '');
+    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', 'root');
 
     //Editeurs
     $sql = "SELECT NumEditeur, NomEditeur
@@ -58,7 +58,7 @@
     </p>
 
      <p>
-        <label for="codeCategorie">Code categorie</label> : <select name="codeCategorie" id="codeCategorie" required>
+        <label for="codeCategorie">Code categorie</label> : <select name="codeCategorie" id="codeCategorie" >
                 <?php
                 foreach($categories as $key => $value):
                 echo '<option value="'.$value.'">'.$key.'</option>'; 

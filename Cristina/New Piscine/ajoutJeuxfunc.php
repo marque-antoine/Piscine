@@ -6,23 +6,21 @@ $dbname = "piscine";
 
 // Create connection
 // $conn = new mysqli($servername, $username, $password, $dbname);
-$myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', '');
+$myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', 'root');
 // $num = $_POST['numEditeur'];
 $nomJeux = $_POST['nomJeux'];
 $nombre=$_POST['nombre'];
 $DateSortie = $_POST['DateSortie'];
 $DureePartie = $_POST['DureePartie'];
-$editeur = $_POST['infoID'];
+$editeur = $_POST['numEditeur'];
 $categ = $_POST['codeCategorie'];
 
 
 
-echo $nomJeux;
-echo $nombre;
-echo $DateSortie;
-echo $DureePartie;
-echo $editeur;
-echo $categ;
+//echo $nomJeux;
+//echo $DateSortie;
+//echo $editeur;
+//echo $categ;
 // Check connection
 // if ($myPDO->connect_error) {
 //     die("Connection failed: " . $myPDO->connect_error);
@@ -46,16 +44,18 @@ if ($myPDO->query($sql) == TRUE) {
 ?>
 
 <html>
-
+<!--
 <?php // A chaque fois on doit faire passer la variable NumEditeur pour que lorsqu'on revient sur la page infoEditeur il affiche les données de l'editeur
 ?>
 
-<form name="envoie" method="POST" action="InfoEditeur.php">
+
+<form name="envoie" method="POST" action="jeux.php">
 	<input type="hidden" name="infoID" value="<?php echo $editeur; ?>" />
 	
 </form>
 	<script type="text/javascript"> document.envoie.submit();</script>
-	<script type="text/javascript">location.href = 'InfoEditeur.php';</script>
+	<script type="text/javascript">location.href = 'ajoutJeux.php';</script>
 	
-
+-->
+		<script typr="text/javascript">location.href = 'jeux.php';</script>
 </html>

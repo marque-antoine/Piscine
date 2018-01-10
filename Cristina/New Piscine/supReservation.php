@@ -7,7 +7,7 @@ $dbname = "piscine";
 
 
 // $conn = new mysqli($servername, $username, $password, $dbname);
-//$myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', '');
+$myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', 'root');
 // $num = $_POST['numEditeur'];
 //$nom = $_POST['nomEditeur'];
 $num = $_POST['ReservationID'];

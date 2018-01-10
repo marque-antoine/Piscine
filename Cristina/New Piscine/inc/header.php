@@ -27,6 +27,7 @@
 								  <li><a href="jeux.php">Jeux</a></li>
 								  <li><a href="reservation.php">Reservation</a></li>
 								  <li><a href="logement.php">Logement</a></li>
+								  <li><a href="zone.php">Zones</a></li>
 								</ul>
 							</div>
 						</div>

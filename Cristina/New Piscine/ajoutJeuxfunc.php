@@ -12,17 +12,17 @@ $nomJeux = $_POST['nomJeux'];
 $nombre=$_POST['nombre'];
 $DateSortie = $_POST['DateSortie'];
 $DureePartie = $_POST['DureePartie'];
-$editeur = $_POST['numEditeur'];
+$editeur = $_POST['infoID'];
 $categ = $_POST['codeCategorie'];
 
 
 
-//echo $nomJeux;
-//echo $nombre;
-//echo $DateSortie;
-//echo $DureePartie;
-//echo $editeur;
-//echo $categ;
+echo $nomJeux;
+echo $nombre;
+echo $DateSortie;
+echo $DureePartie;
+echo $editeur;
+echo $categ;
 // Check connection
 // if ($myPDO->connect_error) {
 //     die("Connection failed: " . $myPDO->connect_error);
@@ -44,6 +44,18 @@ if ($myPDO->query($sql) == TRUE) {
 
 // $conn->close();
 ?>
+
 <html>
-		<script type="text/javascript">location.href = 'jeux.php';</script>
+
+<?php // A chaque fois on doit faire passer la variable NumEditeur pour que lorsqu'on revient sur la page infoEditeur il affiche les données de l'editeur
+?>
+
+<form name="envoie" method="POST" action="InfoEditeur.php">
+	<input type="hidden" name="infoID" value="<?php echo $editeur; ?>" />
+	
+</form>
+	<script type="text/javascript"> document.envoie.submit();</script>
+	<script type="text/javascript">location.href = 'InfoEditeur.php';</script>
+	
+
 </html>

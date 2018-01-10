@@ -58,7 +58,7 @@
                     <td><?php echo htmlspecialchars($r['RueEditeur']); ?></td>
                     <td><?php echo htmlspecialchars($r['VilleEditeur']); ?></td>
                     <td><?php echo htmlspecialchars($r['CodePostale']); ?></td>
-                    <td>
+                    <!--<td>
                         <form method="POST" action="supContact.php">
                             <input type="hidden" name="ContactID" value="<?php echo $r['NumEditeur']; ?>" />
                             <input type="hidden" name="infoID" value="<?php echo $num; ?>" />
@@ -73,14 +73,15 @@
                         <!-- <form method="POST" action="modifEditeur.php"> 
                             
                             <input type="submit" style="float:right;" id="modif" value="Modif"/>Modif</button>
-                        </form>-->
-                    </td>
+                        </form>
+                    </td>-->
+                    
                 </tr>
             <?php endwhile; ?>
     
         </tbody>
     </table>
-    <form method="POST" action="AjoutContact.php">
+    <!--<form method="POST" action="AjoutContact.php">
         <input type="hidden" name="infoID" value="<?php echo $num; ?>" />
 		<button type="submit">Ajouter un contact</button>
 	</form>
@@ -89,21 +90,21 @@
 
 --> <?php
 
-		$sql2 = "SELECT * FROM jeux WHERE NumEditeur='".$num."'"; 
+		$sql2 = "SELECT * FROM categorie WHERE NumCategorie='".$num."'"; 
 		$jeux = $myPDO->query($sql2);
 
 	?>
 	
 	<table class="table table-bordered table-condensed" text-align="center">
         <thead>
-        	<h3>Jeux de <?php echo $NomEdit['NomEditeur'] ?></h3>
+        	<h3>Categorie de <?php echo $NomCategorie['NomCategorie'] ?></h3>
             
         </thead>
         <tbody>
-            <?php while ($JeuxCourant = $jeux->fetch()): ?>
+            <?php while ($JeuxCourant = $categorie->fetch()): ?>
                 <tr>
-                    <tr><td> Nom du jeux :</td><td><strong><?php echo htmlspecialchars($JeuxCourant['NomJeux']) ?><strong></td> 
-                    	<td>  
+                    <tr><td> Nom du jeux :</td><td><strong><?php echo htmlspecialchars($JeuxCourant['NomCategorie']) ?><strong></td> 
+                    	<!--<td>  
                     	<form method="POST" action="supJeux.php">
                             <input type="hidden" name="jeuxID" value="<?php echo $r['NumJeux']; ?>">
                             <input type="hidden" name="infoID" value="<?php echo $num; ?>" />

@@ -156,7 +156,7 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 
-/* When the input field gets focus, change its width to 100% */
+/* When the input field gets focus, change its width to 35% */
 input[type=text]:focus {
     width: 35%;
 }

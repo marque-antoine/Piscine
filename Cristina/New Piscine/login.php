@@ -10,7 +10,7 @@
 	<meta charset="utf-8">
 	<style>
 		body  {
-		    background-image: url("im1.jpg");
+		    background-image: url("images/im1.jpg");
 		    background-color: #cccccc;
 		}
 
@@ -74,34 +74,11 @@
 
 <script>
 
-function myFunction() {
-    var message, x;
-    message = document.getElementById("error");
-    message.innerHTML = "";
-    x = document.getElementById("nom").value;
-    y = document.getElementById("pass").value;
-    try { 
-        if(x == "")  throw "empty";
-        if(x !=="Ali") throw "n'exite pas";
-        x = String(x);
-        if(y == "")  throw "empty";
-        if(y !=="pass") throw "n'exite pas";
-        if(x !=="Ali" && y !=="pass") throw document.getElementByHref("acceuil.php").value = "login.html" ;
 
-        
-    }
-    catch(err) {
-        error.innerHTML = "Nom or password " + err;
-        die("yo");
-    }
-    if(x !=="Ali" && y !=="pass") throw myFunction() ;
-
-}
-function myFunction3() {
-	$nom = $_POST['nom'];
-	$pass = $_POST['pass'];
-	
-}
+<?php
+$nom = $_POST['nom'];
+$pass = $_POST['pass'];
+?>
 </script>
   
 	<section>
@@ -114,7 +91,7 @@ function myFunction3() {
 					
 					<div class="col-md-4">
 						<h1>Se connecter</h1>
-						<form action= "acceuil.php" method="POST" onsubmit="myFunction()">
+						<form action= "login1.php" method="POST" ">
 							<label for="name" >Nom: </label>
 							<input name="nom" type="text" placeholder="Nom d'utilisateur" id="nom" required/>
 							<p id="error"></p>
@@ -122,8 +99,8 @@ function myFunction3() {
 							<label for="password">Password: </label>
 							<input name="pass" type="password" placeholder="Mot de passe" id="pass" required/>
 
-							<input type="submit" value="Se connecter" id = "seConnecter" onclick="myFunction()" onsubmit="myFunction()"/>
-							<button type="button" id = "buton" onclick="myFunction()">Test Input</button>
+							<input type="submit" value="Se connecter" id = "seConnecter"/>
+							<button type="button" id = "buton" >Test Input</button>
 
 				    		<input type="radio" name="souvenir" value="se souvenir" > Se souvenir de moi<br>
 						</form>

@@ -13,7 +13,7 @@
     $q = $myPDO->query($sql);
     ?>
         <div class="container">
-            <form method="POST" action="InfoJeux.php">
+            <form method="POST" action="infoJeux.php">
                 <label for="NomJeux" style="font-size: 16px">Nom du jeux</label> :
             </br>
                 <input type="text" name="nomJeux" id="nomJeux"  > 
@@ -30,6 +30,7 @@
                         <th>Id Editeur</th>
                         <th>Id Categorie</th>
                         <th>Actions</th>
+                        <th>Informations</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,6 +42,7 @@
                             <td><?php echo htmlspecialchars($r['DureePartie']); ?></td>
                             <td><?php echo htmlspecialchars($r['NumEditeur']); ?></td>
                             <td><?php echo htmlspecialchars($r['CodeCategorie']); ?></td>
+
                             <td>
                                 <form method="POST" action="supJeux.php">
                                     <input type="hidden" name="jeuxID" value="<?php echo $r['NumJeux']; ?>" />
@@ -54,6 +56,12 @@
                                     
                                     <input type="submit" style="float:right;" id="modif" value="Modif"/>Modif</button>
                                 </form>-->
+                            </td>
+                            <td>
+                                <form method="POST" action="infoJeux.php">
+                                    <input type="hidden" name="jeuxID" value="<?php echo $r['NumJeux']; ?>" />
+                                    <input type="submit" style="float:right;" id="info" value="info" />
+                                </form>
                             </td>
                         </tr>
                     <?php endwhile; ?>

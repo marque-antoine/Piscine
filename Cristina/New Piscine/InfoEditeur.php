@@ -23,7 +23,7 @@
     		} 
     
     // Il faut penser a mettre cette varia dans toutes les pages qui viennent ici
-    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', '');
+    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', 'root');
     if ( !empty($_POST['nomEditeur']) ) {
     	    $sql3 = "SELECT * FROM `editeur` WHERE NomEditeur = '".$_POST['nomEditeur']."'";
     		$m = $myPDO->query($sql3)->fetch();

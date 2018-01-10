@@ -19,54 +19,54 @@
     //$dbname = "piscine";
     //$editeur= "editeur";
     if ( !empty($_POST['infoID'])) {
-    		$num = $_POST['infoID']; // si ça vient du bouton info on aura la variable infoID en post mais si ça vient de la barre recherche alors c'est la varia nomEditeur qu'on va traduire en NumEditeur juste en dessous.
+    		$num = $_POST['infoID']; // si ça vient du bouton info on aura la variable infoID en post mais si ça vient de la barre recherche alors c'est la varia nomJeux qu'on va traduire en NumJeux juste en dessous.
     		} 
     
     // Il faut penser a mettre cette varia dans toutes les pages qui viennent ici
-    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', '');
-    if ( !empty($_POST['nomEditeur']) ) {
-    	    $sql3 = "SELECT * FROM `editeur` WHERE NomEditeur = '".$_POST['nomEditeur']."'";
-    		$m = $myPDO->query($sql3)->fetch();
-    		$num = $m['NumEditeur'];
+    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', 'root');
+
+    $num = $m['JeuxID'];
         
-    		}
-    $sql2 = "SELECT NumContact, NomContact, PrenomContact, NumTelContact, MailContact
-            FROM contact WHERE NumEditeur='".$num."'"; 
-    $edit= "SELECT NomEditeur FROM `editeur` WHERE NumEditeur='".$num."'";
+    $sql2 = "SELECT *
+            FROM jeux WHERE NumJeux='".$num."'"; 
+    
 
     
     $q = $myPDO->query($sql2);
-    $NomEdit = $myPDO->query($edit)->fetch();
+    
     ?>
-    <form method="POST" action="editeur.php">
-    <button type="submit">Retour Editeurs</button>
+    <form method="POST" action="jeux.php">
+    <button type="submit">Retour Jeux</button>
 	</form>
     <table class="table table-bordered table-condensed">
         <thead>
-        	<h3>Contacts de <?php echo $NomJeux['NomJeux'] ?></h3>
+        	<h3>Catégorie <?php echo $q ['NomJeux'] ?></h3>
             <tr>
-                <th>Nom Editeur</th>
-                <th>Rue Editeur</th>
-                <th>Ville Editeur</th>
-                <th>Code postale</th>
+                <th>Nom Categorie</th>
+                <th>Nombre de joueurs</th>
+                <th>Date de sortie</th>
+                <th>Durée d'une partie</th>
+                <th>Commentaires</th>
             </tr>
         </thead>
         <tbody>
-            <?php while ($r = $q->fetch()): ?>
+            
                 <tr>
-                    <td><?php echo htmlspecialchars($r['NomEditeur']) ?></td>
-                    <td><?php echo htmlspecialchars($r['RueEditeur']); ?></td>
-                    <td><?php echo htmlspecialchars($r['VilleEditeur']); ?></td>
-                    <td><?php echo htmlspecialchars($r['CodePostale']); ?></td>
-                    <!--<td>
-                        <form method="POST" action="supContact.php">
-                            <input type="hidden" name="ContactID" value="<?php echo $r['NumEditeur']; ?>" />
+                    <td><?php echo htmlspecialchars($r['NomCategorie']) ?></td>
+                    <td><?php echo htmlspecialchars($r['NombreJoueur']); ?></td>
+                    <td><?php echo htmlspecialchars($r['DateSortie']); ?></td>
+                    <td><?php echo htmlspecialchars($r['DureePartie']); ?></td>
+                    <td><?php echo htmlspecialchars($r['Commentaire']); ?></td>
+                    <td>
+                        <form method="POST" action="supCategorie.php">
+                            <input type="hidden" name="CategorieID" value="<?php echo $r['NumCategorie']; ?>" />
                             <input type="hidden" name="infoID" value="<?php echo $num; ?>" />
                             <input type="submit" style="float:right;" id="suppr" value="Suppr" /></button>
                         </form>
-                        <form method="POST" action="modifContact.php">
+
+                        <form method="POST" action="modifCategorie.php">
                             <!--<button type="submit">Modif</button> -->
-                            <input type="hidden" name="ContactID" value="<?php echo $r['NumContact']; ?>" />
+                            <input type="hidden" name="CategorieID" value="<?php echo $r['NumCategorie']; ?>" />
                             <input type="hidden" name="infoID" value="<?php echo $num; ?>" />
                             <input type="submit" style="float:right;" id="suppr" value="modif" /></button>
                         </form>
@@ -77,13 +77,13 @@
                     </td>-->
                     
                 </tr>
-            <?php endwhile; ?>
+            
     
         </tbody>
     </table>
-    <!--<form method="POST" action="AjoutContact.php">
+    <form method="POST" action="ajoutJeux.php">
         <input type="hidden" name="infoID" value="<?php echo $num; ?>" />
-		<button type="submit">Ajouter un contact</button>
+		<button type="submit">Ajouter un jeu</button>
 	</form>
 
 <!-- On affiche maintenant ses jeux
@@ -97,14 +97,14 @@
 	
 	<table class="table table-bordered table-condensed" text-align="center">
         <thead>
-        	<h3>Categorie de <?php echo $NomCategorie['NomCategorie'] ?></h3>
+        	<h3>Editeur <?php echo $NomCategorie['NomCategorie'] ?></h3>
             
         </thead>
         <tbody>
             <?php while ($JeuxCourant = $categorie->fetch()): ?>
                 <tr>
                     <tr><td> Nom du jeux :</td><td><strong><?php echo htmlspecialchars($JeuxCourant['NomCategorie']) ?><strong></td> 
-                    	<!--<td>  
+                    	<td>  
                     	<form method="POST" action="supJeux.php">
                             <input type="hidden" name="jeuxID" value="<?php echo $r['NumJeux']; ?>">
                             <input type="hidden" name="infoID" value="<?php echo $num; ?>" />

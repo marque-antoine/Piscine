@@ -1,20 +1,16 @@
 
 <?php
-<<<<<<< HEAD
+
     include'inc/header.php';
-=======
-	include'inc/header.php';
->>>>>>> 97ce80c76be07eaef5e882432f67f38d1f2d6e80
+	
     //$servername = "localhost";
     //$username = "root";
     //$password = "";
     //$dbname = "piscine";
     //$editeur= "editeur";
-<<<<<<< HEAD
+
     $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root');
-=======
-    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', 'root');
->>>>>>> 97ce80c76be07eaef5e882432f67f38d1f2d6e80
+
 
     $sql1 = "SELECT NumReservation, DateReservation, Commenaire, PrixEspace, Statut, EtatFacture
             FROM `reservation`";
@@ -24,21 +20,21 @@
     ?>
     <div class="container">
     <form method="POST" action="InfoReservation.php">
-<<<<<<< HEAD
+
         <label for="DateReservation" style="font-size: 16px">Date de la reservation</label> :
-=======
+
     	<label for="DateReservation" style="font-size: 16px">Date de la reservation</label> :
->>>>>>> 97ce80c76be07eaef5e882432f67f38d1f2d6e80
+
     </br>
         <input type="text" name="" id="nomEditeur"  > 
     </br>
         <input type="submit" class = "recherche" style="left:20px;" id="recherche" value="Rechercher" /></button>
     </form>
-<<<<<<< HEAD
+
     </br>
-=======
+
 	</br>
->>>>>>> 97ce80c76be07eaef5e882432f67f38d1f2d6e80
+
     <table class="table table-bordered table-condensed" id="editeur">
         <thead>
             <tr>
@@ -90,15 +86,14 @@
     
     
 
-<<<<<<< HEAD
+
     <middle>
 
 
-=======
 	<middle>
 
 
->>>>>>> 97ce80c76be07eaef5e882432f67f38d1f2d6e80
+
         </p>
             <form method="POST" action="ajoutReservation.php">
             <button class="button" type="submit">Ajouter Reservation</button>
@@ -121,7 +116,6 @@
 #editeur tr:nth-child(even){background-color: #f2f2f2;}
 
 #editeur tr:hover {background-color: #ddd;}
-<<<<<<< HEAD
 
 #editeur th {
     padding-top: 12px;
@@ -129,8 +123,8 @@
     text-align: left;
     background-color: #4CAF50;
     color: white;
+}
 
-=======
 
 #editeur th {
     padding-top: 12px;
@@ -138,8 +132,6 @@
     text-align: left;
     background-color: #4CAF50;
     color: white;
-
->>>>>>> 97ce80c76be07eaef5e882432f67f38d1f2d6e80
 }
 .button {
     background-color: #4CAF50; /* Green */

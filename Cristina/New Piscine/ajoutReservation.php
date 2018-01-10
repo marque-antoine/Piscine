@@ -5,6 +5,7 @@
 	function myFunction() {
 	$nom = $_POST['nom'];
 	$pass = $_POST['pass'];
+<<<<<<< HEAD
 
 }
 
@@ -33,6 +34,13 @@
 ?>
 <middle>
 <form action= "fctAjoutReservation.php" method="POST" id="add">
+=======
+	
+}
+?>
+<middle>
+<form action= "fctAjoutReservation.php" method="POST" >
+>>>>>>> 97ce80c76be07eaef5e882432f67f38d1f2d6e80
     <legend>Editeur</legend>
     <p>
         <label for="DateReservation">Date de reservation</label> : <input type="date" name="dateReservation" id="dateReservation" required  />
@@ -54,6 +62,7 @@
         <!--<label for="Num">NUM </label><input type="number" name="numEditeur" id="numEditeur" required/>-->
 
     </p>
+<<<<<<< HEAD
 
     
     <input type="submit" value="Ajouter" id = "add" />
@@ -81,6 +90,10 @@
     </p>
     <input type="submit" value="Ajout Jeux dans zone" id = "localiser" />
     </form>
+=======
+    <input type="submit" value="Ajouter" id = "add" />
+</form>
+>>>>>>> 97ce80c76be07eaef5e882432f67f38d1f2d6e80
 </middle>
 </body>
 </html>

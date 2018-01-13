@@ -46,7 +46,7 @@
 
     </p>
      <p>
-        <label for="numEditeur">ID editeur</label> : <select name="numEditeur" id="numEditeur" required>
+        <label for="numEditeur">Nom editeur</label> : <select name="numEditeur" id="numEditeur" required>
                 <?php
                 foreach($editeurs as $key => $value):
                 echo '<option value="'.$value.'">'.$key.'</option>'; 
@@ -58,7 +58,7 @@
     </p>
 
      <p>
-        <label for="codeCategorie">Code categorie</label> : <select name="codeCategorie" id="codeCategorie" required>
+        <label for="codeCategorie">Categorie</label> : <select name="codeCategorie" id="codeCategorie" required>
                 <?php
                 foreach($categories as $key => $value):
                 echo '<option value="'.$value.'">'.$key.'</option>'; 
@@ -70,6 +70,19 @@
     </p>
     <input type="submit" value="Ajouter jeux" id = "add" />
 </form>
+</form>
+<p>
+<form method="POST" action="ajoutCategorie.php">
+	<input type="submit" value="Ajouter une categorie" />
+	
+</form>
+</p>
+<p>
+<form method="POST" action="jeux.php">
+	<input type="submit" value="Annuler" />
+	
+</form>
+</p>
 </middle>
 </body>
 </html>

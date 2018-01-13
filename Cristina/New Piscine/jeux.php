@@ -5,7 +5,7 @@
     //$password = "";
     //$dbname = "piscine";
     //$editeur= "editeur";
-    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', 'root');
+    $myPDO = new PDO('mysql:host=localhost;dbname=piscine', 'root', '');
 
     $sql = "SELECT NumJeux, NomJeux, NombreJoueur,  DateSortie, DureePartie, NumEditeur, CodeCategorie 
             FROM `jeux`";
@@ -72,7 +72,15 @@
         </form>
         </form>
         </middle>
+<p>
+<form method="POST" action="categorie.php">
+	<input type="submit" value="Modifier les categories" />
+	
+</form>
+</p>
     </div>
+
+
 
     <style>
 #jeux {
